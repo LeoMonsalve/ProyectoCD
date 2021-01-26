@@ -5,8 +5,6 @@ import javax.persistence.Table;
 
 import java.util.Date;
 
-
-
 import javax.persistence.Column;
 
 import javax.persistence.FetchType;
@@ -16,11 +14,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,15 +28,20 @@ public class Usuarios {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank(message = "Nombre de Edificio es obligatorio")
 	@Size(min = 5, max = 200)
 	private String nombreEdificio;
 	@Size(min = 5, max = 200)
+	@NotBlank(message = "Mail es obligatorio")
 	private String email;
 	@Transient
+	@NotBlank(message = "Los mails tienen que coincidir")
 	private String confirmEmail;
 	@Size(min = 5, max = 200)
+	@NotBlank(message = "Contraseña debe tener un largo de 5 caracteres")
 	private String password;
 	@Transient
+	@NotBlank(message = "Las contraseñas tienen que coincidir")
 	private String confirmPassword;
 	
 	@Size(min = 5, max = 200)

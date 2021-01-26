@@ -32,9 +32,9 @@ public class Personas {
 	private Long id;
 	@Size(min = 5, max = 200)
 	private String nombre;
-	@Size(min = 5, max = 200)
+	@Size(min = 0, max = 200)
 	private String apellido;
-	@Size(min = 5, max = 200)
+	@Size(min = 0, max = 200)
 	private String rut;
 	@Size(min = 5, max = 200)
 	private String fechaNacimiento;

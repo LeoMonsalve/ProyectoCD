@@ -15,6 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -34,7 +35,7 @@ public class Edificios {
 	@Size(min = 5, max = 200)
 	private String rut;
     @OneToMany(mappedBy = "edificios", fetch = FetchType.LAZY)
-    
+    @JsonBackReference
 	public List<Departamentos> departamentos;
 	
 	@OneToMany(mappedBy = "edificios", fetch = FetchType.LAZY)

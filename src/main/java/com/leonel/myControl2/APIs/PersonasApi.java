@@ -3,7 +3,7 @@ package com.leonel.myControl2.APIs;
 import java.util.List;
 
 import com.leonel.myControl2.models.Personas;
-
+import com.leonel.myControl2.models.PersonasDTO;
 import com.leonel.myControl2.services.PersonasService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class PersonasApi {
         return personasService.findPersonas(id);
     }
     @PostMapping
-    public Personas crearPersonas(@RequestBody Personas personas)  {
+    public Personas crearPersonas(@RequestBody PersonasDTO personas)  {
         return personasService.createPersonas(personas);
     }  
     @PutMapping("/{id}")

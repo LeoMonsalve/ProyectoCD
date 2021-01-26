@@ -3,6 +3,7 @@ package com.leonel.myControl2.APIs;
 import java.util.List;
 
 import com.leonel.myControl2.models.Departamentos;
+import com.leonel.myControl2.models.DepartamentosDTO;
 import com.leonel.myControl2.services.DepartamentosService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,8 @@ public class DepartamentosApi {
         return departamentosService.findDepartamentos(id);
     }
     @PostMapping
-    public Departamentos crearDepartamentos(@RequestBody Departamentos departamentos){
+    
+    public Departamentos crearDepartamentos(@RequestBody DepartamentosDTO departamentos){
         return departamentosService.createDeparmentos(departamentos);
     }
     @PutMapping("/{id}")

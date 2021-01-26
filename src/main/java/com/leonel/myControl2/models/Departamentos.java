@@ -41,7 +41,7 @@ public class Departamentos {
     private List<Personas> personas;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "edificios_id")
+    @JoinColumn(name = "edificios")
     
 	private Edificios edificios;
     @Column(updatable = false)
@@ -105,4 +105,19 @@ public class Departamentos {
 		this.updatedAt = new Date();
 	}
     
+
+    /**
+     * @return Edificios return the edificios
+     */
+    public Edificios getEdificios() {
+        return edificios;
+    }
+
+    /**
+     * @param edificios the edificios to set
+     */
+    public void setEdificios(Edificios edificios) {
+        this.edificios = edificios;
+    }
+
 }
